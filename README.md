@@ -11,6 +11,7 @@ multren x myfile txt ---> change|add extension
 multren x myfile '' ---> remove extension
 multren p .dat 'new-pre-' ---> add prefix
 multren p myfile 'new-pre-' ---> add prefix
+multren p .dat 5 ---> add prefix 005_ 010_ 015_ ...
 multren s .dat '-new-suf' ---> add suffix
 multren s myfile '-new-suf' ---> add suffix
 multren r 'test' 'production' ---> string replacement

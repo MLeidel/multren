@@ -77,6 +77,7 @@ int main(int argc, char *argv[]) {
         printf("multren x myfile '' ---> remove extension\n");
         printf("multren p .dat 'new-pre-' ---> add prefix\n");
         printf("multren p myfile 'new-pre-' ---> add prefix\n");
+        printf("multren p .dat 5 ---> add prefix 005_ 010_ 015_ ...\n");
         printf("multren s .dat '-new-suf' ---> add suffix\n");
         printf("multren s myfile '-new-suf' ---> add suffix\n");
         printf("multren r 'test' 'production' ---> string replacement\n");
