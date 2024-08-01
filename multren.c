@@ -56,6 +56,7 @@ char targ[BUFSIZE];     // cmd-line arg 2 (target)
 char data[BUFSIZE];     // cmd-line arg 3
 int targ_ext = 0;
 int counter  = 0;
+int nbr = 0; // to increment prefix number
 void add_suffix();
 void add_prefix();
 void change_ext();
@@ -191,9 +192,17 @@ void change_ext() {
 */
 void add_prefix() {
     int value;
-    char new_name[100];
-    strcpy(new_name, data);
-    strcat(new_name, fname);
+    int inc = 0;
+    char new_name[BUFSIZE];
+
+    inc = atoi(data);
+    if (inc > 0) {
+        nbr += inc;
+        sprintf(new_name, "%03d_%s", nbr, fname);
+    } else {
+        strcpy(new_name, data);   // new prefix text
+        strcat(new_name, fname); // this filename
+    }
 
     value = rename(fname, new_name);
     if (!value) {
